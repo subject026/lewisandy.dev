@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import Header from "../components/organisms/Header.astro";
+import HeaderTitle from "../components/HeaderTitle.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <Header />
+<Layout title="Lewis Andy - Front End Developer">
+  <Header>
+    <HeaderTitle />
+  </Header>
   <main></main>
 </Layout>
