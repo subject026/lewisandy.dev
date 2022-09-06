@@ -1,7 +1,29 @@
 ---
 ---
 
-<span>
-  <span>Lewis Andy</span>
-  <span>front-end developer</span>
+<span class="flex flex-col gap-4">
+  <h1 class="m-0 text-6xl text-gradient">Lewis Andy</h1>
+  <h2 class="m-0">front-end developer</h2>
 </span>
+
+<style>
+  :root {
+    --astro-gradient: linear-gradient(
+      189.77deg,
+      #352e54 -32.97%,
+      #e6596d 34.66%,
+      #e78c3e 123.24%
+    );
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--astro-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+    animation: pulse 4s ease-in-out infinite;
+  }
+</style>
