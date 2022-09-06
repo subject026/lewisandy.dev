@@ -2,32 +2,37 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import HeaderTitle from "../components/HeaderTitle.astro";
-import Button from "../components/Button";
+import DarkModeToggleButton from "../components/DarkModeToggleButton";
 ---
 
 <Layout title="Lewis Andy - Front End Developer">
   <Header>
     <HeaderTitle />
-    <Button client:load>Click Me!</Button>
+    <DarkModeToggleButton client:load />
   </Header>
   <main></main>
 </Layout>
 
 <script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
+  const getTheme = () => {
+    if (
+      typeof localStorage !== "undefined" &&
+      localStorage.getItem("lewisAndyTheme")
+    ) {
+      return localStorage.getItem("lewisAndyTheme");
     }
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark";
     }
     return "light";
-  })();
+  };
+
+  const theme = getTheme();
 
   if (theme === "light") {
     document.documentElement.classList.remove("dark");
   } else {
     document.documentElement.classList.add("dark");
   }
-  window.localStorage.setItem("theme", theme);
+  window.localStorage.setItem("lewisAndyTheme", theme);
 </script>
