@@ -1,12 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/organisms/Header.astro";
+import Header from "../components/Header.astro";
 import HeaderTitle from "../components/HeaderTitle.astro";
+import Button from "../components/Button";
 ---
 
 <Layout title="Lewis Andy - Front End Developer">
   <Header>
     <HeaderTitle />
+    <Button client:load>Click Me!</Button>
   </Header>
   <main></main>
 </Layout>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>
