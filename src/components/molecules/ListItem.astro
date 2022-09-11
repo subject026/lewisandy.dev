@@ -1,0 +1,14 @@
+---
+import Icon from "../atoms/Icon.astro";
+
+const { icon } = Astro.props;
+
+export interface Props {
+  icon: "project" | "commandline";
+}
+---
+
+<article class="flex gap-4 fill-neutral-700 dark:fill-neutral-200">
+  <Icon variant={icon} />
+  <slot />
+</article>
