@@ -7,6 +7,8 @@ import SectionCard from "../components/molecules/SectionCard.astro";
 import SectionTitle from "../components/atoms/SectionTitle.astro";
 import ExternalLink from "../components/atoms/ExternalLink.astro";
 import Icon from "../components/atoms/Icon.astro";
+import ListItem from "../components/molecules/ListItem.astro";
+import SectionList from "../components/molecules/SectionList.astro";
 ---
 
 <Layout title="Lewis Andy - Front End Developer">
@@ -33,35 +35,52 @@ import Icon from "../components/atoms/Icon.astro";
     </div>
   </Header>
 
-  <main class="w-full grid grid-cols-12 gap-16">
-    <section class="col-span-12 md:col-span-4">
+  <main class="w-full py-4 md:py-8 grid grid-cols-12 md:gap-x-10">
+    <section class="col-span-12 md:col-span-4 flex flex-col gap-8">
+      <SectionCard>
+        <SectionTitle>Current Projects</SectionTitle>
+        <SectionList>
+          <ListItem icon="project"
+            >Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas.</ListItem
+          >
+          <ListItem icon="project"
+            >Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas.</ListItem
+          >
+          <ListItem icon="project"
+            >Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas.</ListItem
+          >
+          <ListItem icon="project"
+            >Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas.</ListItem
+          >
+        </SectionList>
+      </SectionCard>
       <SectionCard>
         <SectionTitle>Skills</SectionTitle>
-        <ul>
-          <li>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada
-            fames ac turpis egestas.
-          </li>
-          <li>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada
-            fames ac turpis egestas.
-          </li>
-          <li>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada
-            fames ac turpis egestas.
-          </li>
-          <li>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada
-            fames ac turpis egestas.
-          </li>
-          <li>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada
-            fames ac turpis egestas.
-          </li>
-        </ul>
+        <SectionList>
+          <ListItem icon="commandline"
+            >Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas.</ListItem
+          >
+          <ListItem icon="commandline"
+            >Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas.</ListItem
+          >
+          <ListItem icon="commandline"
+            >Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas.</ListItem
+          >
+          <ListItem icon="commandline"
+            >Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas.</ListItem
+          >
+        </SectionList>
       </SectionCard>
     </section>
-    <section class="col-span-12 md:col-span-8">
+    <section class="col-span-12 md:col-span-8 flex flex-col gap-8">
       <SectionCard>
         <SectionTitle>About Me</SectionTitle>
         <p>
